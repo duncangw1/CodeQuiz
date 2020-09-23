@@ -13,12 +13,12 @@ body {
   width: 50%;
   font-size: 20px;
 }
-
+/* Removing link underline and changing color */
 a:link {
   text-decoration: none;
   color: indigo;
 }
-
+/* Adding hover effect with inverted colors and rounded corners */
 a:hover {
   color: white;
   background-color: indigo;
@@ -28,4 +28,15 @@ a:hover {
 /* Aligning the timer in the header to the right side of the page */
 .timer {
   text-align: right;
+}
+/* Setting container styling and positioning in center of page */
+.container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 10px;
+}
+/* Aligning page title and changing font size */
+.title {
+  text-align: center;
+  font-size: 30px;
 }
