@@ -12,7 +12,7 @@ body {
 .timer {
   float: left;
   width: 50%;
-  font-size: 20px;
+  font-size: 15px;
 }
 /* Removing link underline and changing color */
 a:link {
@@ -32,7 +32,7 @@ a:hover {
 }
 /* Setting container styling and positioning in center of page */
 .container {
-  width: 60%;
+  width: 40%;
   margin: 0 auto;
   padding: 10px;
 }
@@ -40,4 +40,9 @@ a:hover {
 .title {
   text-align: center;
   font-size: 25px;
+}
+/* Aligning description and changing line height */
+.description {
+  text-align: center;
+  line-height: 20px;
 }
