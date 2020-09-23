@@ -1,0 +1,18 @@
+/* Ensuring box borders are included in their size */
+* {
+  box-sizing: border-box;
+}
+/* Setting universal body height */
+body {
+  height: 100%;
+}
+/* Floating header elements left and making each one take up half of the width */
+.highscorelink,
+.timer {
+  float: left;
+  width: 50%;
+}
+/* Aligning the timer in the header to the right side of the page */
+.timer {
+  text-align: right;
+}
