@@ -11,6 +11,19 @@ body {
 .timer {
   float: left;
   width: 50%;
+  font-size: 20px;
+}
+
+a:link {
+  text-decoration: none;
+  color: indigo;
+}
+
+a:hover {
+  color: white;
+  background-color: indigo;
+  padding: 5px;
+  border-radius: 10px;
 }
 /* Aligning the timer in the header to the right side of the page */
 .timer {
