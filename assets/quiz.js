@@ -1,4 +1,11 @@
-// Object holding questions, choices, and answers
+// Establishing element links to index.html
+var counterEl = document.querySelector("#counter");
+var quizQuestionEl = document.querySelector("#quiztitle");
+var quizChoicesEl = document.querySelector("#quizdescription");
+var startButtonEl = document.querySelector("#startbutton");
+var footerEl = document.querySelector(".footer");
+
+// Array holding objects containing questions, choices, and answers
 var questions = [
   {
     question: "Commonly used data types DO NOT include:",
@@ -44,3 +51,12 @@ var questions = [
     answer: "4. console.log",
   },
 ];
+
+// Start button function
+startButtonEl.addEventListener("click", function (event) {
+  console.log("clicked: ", startButtonEl);
+  // Start timer counting down
+  // Display first question and its choices
+});
+
+// Function to write questions and choices to HTML
