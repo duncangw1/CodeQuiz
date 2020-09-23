@@ -43,11 +43,22 @@ a:hover {
   text-align: center;
   font-size: 25px;
 }
+/* Aligning the highscore page title */
+#highscorestitle {
+  text-align: left;
+}
 /* Aligning description and changing line height */
 .description {
   text-align: center;
   line-height: 20px;
 }
+
+ol {
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
 /* Start button styling and positioning relative to the container */
 #startbutton {
   background-color: indigo;
