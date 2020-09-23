@@ -64,7 +64,7 @@ ol {
   align-items: center;
 }
 /* Start button styling and positioning relative to the container */
-#startbutton {
+.button {
   background-color: indigo;
   border: none;
   color: white;
@@ -78,6 +78,6 @@ ol {
   cursor: pointer;
 }
 /* Adding hover to start button */
-#startbutton:hover {
+.button:hover {
   opacity: 0.5;
 }
