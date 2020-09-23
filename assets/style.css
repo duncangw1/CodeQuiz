@@ -25,6 +25,7 @@ a:hover {
   background-color: indigo;
   padding: 5px;
   border-radius: 10px;
+  opacity: 0.5;
 }
 /* Aligning the timer in the header to the right side of the page */
 .timer {
@@ -35,6 +36,7 @@ a:hover {
   width: 40%;
   margin: 0 auto;
   padding: 10px;
+  position: relative;
 }
 /* Aligning page title and changing font size */
 .title {
@@ -45,4 +47,26 @@ a:hover {
 .description {
   text-align: center;
   line-height: 20px;
+}
+/* Start button styling and positioning relative to the container */
+#startbutton {
+  background-color: indigo;
+  border: none;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* Adding hover to start button */
+#startbutton:hover {
+  opacity: 0.5;
 }
