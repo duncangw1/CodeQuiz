@@ -36,7 +36,6 @@ a:hover {
   width: 40%;
   margin: 0 auto;
   padding: 10px;
-  position: relative;
 }
 /* Aligning page title and changing font size */
 .title {
@@ -52,13 +51,18 @@ a:hover {
   text-align: center;
   line-height: 20px;
 }
-
+/* Styling and positioning for ol list */
 ol {
   list-style-position: inside;
   margin: 0;
   padding: 0;
 }
-
+/* Added flex box to center the start button */
+.buttonhomepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Start button styling and positioning relative to the container */
 #startbutton {
   background-color: indigo;
@@ -72,10 +76,6 @@ ol {
   margin-top: 15px;
   border-radius: 10px;
   cursor: pointer;
-  position: absolute;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
 }
 /* Adding hover to start button */
 #startbutton:hover {
