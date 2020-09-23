@@ -63,6 +63,11 @@ ol {
   justify-content: center;
   align-items: center;
 }
+/* Added flex box to position highscore page buttons to the left */
+.buttonshspage {
+  display: flex;
+  justify-content: start;
+}
 /* Start button styling and positioning relative to the container */
 .button {
   background-color: indigo;
@@ -74,6 +79,8 @@ ol {
   display: inline-block;
   font-size: 16px;
   margin-top: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
   border-radius: 10px;
   cursor: pointer;
 }
