@@ -50,6 +50,9 @@ var timeLeft = 76;
 var ol = document.createElement("ol");
 // Variable to hold amount of correct answers
 var correctAnswers = 0;
+// Adding sound for correct and wrong answers
+var correctSound = new Audio("assets/audio/correctsound.wav");
+var wrongSound = new Audio("assets/audio/wrongsound.mp3");
 
 // Start button function
 startButtonEl.addEventListener("click", function (event) {
@@ -99,10 +102,12 @@ function checkAnswer(event) {
 
   if (usersPick.textContent === questions[questionsStart].answer) {
     correctAnswers++;
+    correctSound.play();
     footerEl.textContent = "Correct!";
     console.log("number of correct answers: ", correctAnswers);
   } else {
     timeLeft = timeLeft - 10;
+    wrongSound.play();
     footerEl.textContent = "Wrong!";
   }
 }
