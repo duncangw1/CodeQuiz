@@ -41,12 +41,15 @@ var questions = [
     answer: "console.log",
   },
 ];
+
 // Setting questions array start point
 var questionsStart = 0;
 // Setting timer starting number
 var timeLeft = 76;
 // Used to create an ordered list
 var ol = document.createElement("ol");
+// Variable to hold amount of correct answers
+var correctAnswers = 0;
 
 // Start button function
 startButtonEl.addEventListener("click", function (event) {
@@ -66,7 +69,6 @@ startButtonEl.addEventListener("click", function (event) {
 });
 
 // Function to write questions and choices to HTML
-// writeQC
 function writeQC() {
   quizQuestionEl.textContent = "";
   quizChoicesEl.remove();
@@ -86,7 +88,22 @@ function writeQC() {
     var li = document.createElement("li");
     ol.appendChild(li);
     li.textContent = writeList;
+    li.addEventListener("click", checkAnswer);
   });
 }
 
+// Function to determine and display if user clicked the right answer or a wrong answer
+function checkAnswer(event) {
+  var usersPick = event.target;
+  console.log("users pick: ", usersPick);
+
+  if (usersPick.textContent === questions[questionsStart].answer) {
+    correctAnswers++;
+    footerEl.textContent = "Correct!";
+    console.log("number of correct answers: ", correctAnswers);
+  } else {
+    timeLeft = timeLeft - 10;
+    footerEl.textContent = "Wrong!";
+  }
+}
 // gameOver function placeholder
