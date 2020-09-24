@@ -51,7 +51,8 @@ var questions = [
     answer: "4. console.log",
   },
 ];
-
+// Setting questions array start point
+var questionsStart = 0;
 // Setting timer starting number
 var timeLeft = 76;
 
@@ -66,6 +67,7 @@ startButtonEl.addEventListener("click", function (event) {
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
       counterEl.textContent = "Game over!";
+      // gameOver function placeholder
     }
   }, 1000);
   // Display first question and its choices
@@ -78,6 +80,15 @@ function writeQC() {
   quizQuestionEl.textContent = "";
   quizChoicesEl.textContent = "";
   startButtonEl.remove();
-  console.log(quizQuestionEl);
-  console.log(quizChoicesEl);
+  // For loop to cycle through the questions array
+  for (var i = 0; i < questions.length; i++) {
+    var currentQuestion = questions[questionsStart].question;
+    console.log("question: ", currentQuestion);
+    var currentChoices = questions[questionsStart].choices;
+    console.log("choices: " + currentChoices);
+    quizQuestionEl.textContent = currentQuestion;
+    quizChoicesEl.textContent = currentChoices;
+  }
 }
+
+// gameOver function placeholder
