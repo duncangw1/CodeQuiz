@@ -52,7 +52,7 @@ var questions = [
   },
 ];
 
-var questions = 0;
+// Setting timer starting number
 var timeLeft = 76;
 
 // Start button function
@@ -69,8 +69,15 @@ startButtonEl.addEventListener("click", function (event) {
     }
   }, 1000);
   // Display first question and its choices
-  // writeQC
+  writeQC();
 });
 
 // Function to write questions and choices to HTML
 // writeQC
+function writeQC() {
+  quizQuestionEl.textContent = "";
+  quizChoicesEl.textContent = "";
+  startButtonEl.remove();
+  console.log(quizQuestionEl);
+  console.log(quizChoicesEl);
+}
