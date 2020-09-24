@@ -50,7 +50,6 @@ var ol = document.createElement("ol");
 
 // Start button function
 startButtonEl.addEventListener("click", function (event) {
-  console.log("clicked: ", startButtonEl);
   // Start timer counting down
   var timerInterval = setInterval(function () {
     timeLeft--;
@@ -78,6 +77,7 @@ function writeQC() {
     var currentChoices = questions[questionsStart].choices;
 
     quizQuestionEl.textContent = currentQuestion;
+    quizQuestionEl.setAttribute("style", "font-size: 25px; text-align: left");
   }
   // Creating list under the quizQuestionEl element
   quizQuestionEl.appendChild(ol);

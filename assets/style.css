@@ -84,7 +84,20 @@ ol {
   border-radius: 10px;
   cursor: pointer;
 }
-/* Adding hover to start button */
-.button:hover {
+/* Adding hover to start button and multiple choice list buttons */
+.button:hover,
+li:hover {
   opacity: 0.5;
+}
+/* Styling multiple choice question options */
+li {
+  width: fit-content;
+  background-color: indigo;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  text-align: left;
+  font-size: 16px;
+  margin-top: 15px;
+  border-radius: 10px;
+  cursor: pointer;
 }
