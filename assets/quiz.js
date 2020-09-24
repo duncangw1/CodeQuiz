@@ -9,52 +9,44 @@ var footerEl = document.querySelector(".footer");
 var questions = [
   {
     question: "Commonly used data types DO NOT include:",
-    choices: ["1. strings", "2. booleans", "3. alerts", "4. numbers"],
-    answer: "3. alerts",
+    choices: ["strings", "booleans", "alerts", "numbers"],
+    answer: "alerts",
   },
   {
     question:
       "The condition in an if/else statement is enclosed within ______.",
-    choices: [
-      "1. quotes",
-      "2. curly brackets",
-      "3. parentheses",
-      "4. square brackets",
-    ],
-    answer: "3. parentheses",
+    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+    answer: "parentheses",
   },
   {
     question: "Arrays in JavaScript can be used to store ______.",
     choices: [
-      "1. numbers and strings",
-      "2. other arrays",
-      "3. booleans",
-      "4. all of the above",
+      "numbers and strings",
+      "other arrays",
+      "booleans",
+      "all of the above",
     ],
-    answer: "4. all of the above",
+    answer: "all of the above",
   },
   {
     question:
       "String values must be enclosed within ______ when being assigned to variables.",
-    choices: ["1. commas", "2. curly brackets", "3. quotes", "4. parentheses"],
-    answer: "3. quotes",
+    choices: ["commas", "curly brackets", "quotes", "parentheses"],
+    answer: "quotes",
   },
   {
     question:
       "A very useful tool used during development and debugging for printing content to the debugger is:",
-    choices: [
-      "1. JavaScript",
-      "2. terminal/bash",
-      "3. for loops",
-      "4. console.log",
-    ],
-    answer: "4. console.log",
+    choices: ["JavaScript", "terminal/bash", "for loops", "console.log"],
+    answer: "console.log",
   },
 ];
 // Setting questions array start point
 var questionsStart = 0;
 // Setting timer starting number
 var timeLeft = 76;
+// Used to create an ordered list
+var ol = document.createElement("ol");
 
 // Start button function
 startButtonEl.addEventListener("click", function (event) {
@@ -78,17 +70,23 @@ startButtonEl.addEventListener("click", function (event) {
 // writeQC
 function writeQC() {
   quizQuestionEl.textContent = "";
-  quizChoicesEl.textContent = "";
+  quizChoicesEl.remove();
   startButtonEl.remove();
   // For loop to cycle through the questions array
   for (var i = 0; i < questions.length; i++) {
     var currentQuestion = questions[questionsStart].question;
-    console.log("question: ", currentQuestion);
     var currentChoices = questions[questionsStart].choices;
-    console.log("choices: " + currentChoices);
+
     quizQuestionEl.textContent = currentQuestion;
-    quizChoicesEl.textContent = currentChoices;
   }
+  // Creating list under the quizQuestionEl element
+  quizQuestionEl.appendChild(ol);
+  // For each loop to create a list of choices for each question
+  currentChoices.forEach(function (writeList) {
+    var li = document.createElement("li");
+    ol.appendChild(li);
+    li.textContent = writeList;
+  });
 }
 
 // gameOver function placeholder
