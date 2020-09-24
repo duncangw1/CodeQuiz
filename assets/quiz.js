@@ -104,11 +104,17 @@ function checkAnswer(event) {
     correctAnswers++;
     correctSound.play();
     footerEl.textContent = "Correct!";
-    console.log("number of correct answers: ", correctAnswers);
+    setTimeout(fadeout, 1000);
   } else {
     timeLeft = timeLeft - 10;
     wrongSound.play();
     footerEl.textContent = "Wrong!";
+    setTimeout(fadeout, 1000);
   }
+}
+
+// Fade function for footer message correct or wrong
+function fadeout() {
+  footerEl.textContent = "";
 }
 // gameOver function placeholder
