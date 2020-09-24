@@ -52,11 +52,25 @@ var questions = [
   },
 ];
 
+var questions = 0;
+var timeLeft = 76;
+
 // Start button function
 startButtonEl.addEventListener("click", function (event) {
   console.log("clicked: ", startButtonEl);
   // Start timer counting down
+  var timerInterval = setInterval(function () {
+    timeLeft--;
+    counterEl.textContent = timeLeft;
+    // Show Game Over when it reaches zero
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      counterEl.textContent = "Game over!";
+    }
+  }, 1000);
   // Display first question and its choices
+  // writeQC
 });
 
 // Function to write questions and choices to HTML
+// writeQC
