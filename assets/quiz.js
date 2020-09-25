@@ -67,38 +67,38 @@ startButtonEl.addEventListener("click", function (event) {
       // gameOver function placeholder
     }
   }, 1000);
+  // Remove text and elements from start page
+  quizQuestionEl.textContent = "";
+  quizChoicesEl.remove();
+  startButtonEl.remove();
   // Display first question and its choices
   writeQC();
 });
 
 // Function to write questions and choices to HTML
 function writeQC() {
-  quizQuestionEl.textContent = "";
-  quizChoicesEl.remove();
-  startButtonEl.remove();
-  // For loop to cycle through the questions array
-  for (var i = 0; i < questions.length; i++) {
-    var currentQuestion = questions[questionsStart].question;
-    var currentChoices = questions[questionsStart].choices;
+  clearQC();
 
-    quizQuestionEl.textContent = currentQuestion;
-    quizQuestionEl.setAttribute("style", "font-size: 25px; text-align: left");
-  }
-  // Creating list under the quizQuestionEl element
+  var currentQuestion = questions[questionsStart].question;
+  var currentChoices = questions[questionsStart].choices;
+
+  quizQuestionEl.textContent = currentQuestion;
+  quizQuestionEl.setAttribute("style", "font-size: 25px; text-align: left");
+
   quizQuestionEl.appendChild(ol);
-  // For each loop to create a list of choices for each question
+
   currentChoices.forEach(function (writeList) {
     var li = document.createElement("li");
     ol.appendChild(li);
     li.textContent = writeList;
     li.addEventListener("click", checkAnswer);
+    li.addEventListener("click", writeQC);
   });
 }
 
 // Function to determine and display if user clicked the right answer or a wrong answer
 function checkAnswer(event) {
   var usersPick = event.target;
-  console.log("users pick: ", usersPick);
 
   if (usersPick.textContent === questions[questionsStart].answer) {
     correctAnswers++;
@@ -111,6 +111,15 @@ function checkAnswer(event) {
     footerEl.textContent = "Wrong!";
     setTimeout(fadeout, 1000);
   }
+  // Moving to the next question
+  questionsStart++;
+  console.log("questionsStart: ", questionsStart);
+}
+
+// Function to clear question and choice area
+function clearQC() {
+  quizQuestionEl.textContent = "";
+  ol.textContent = "";
 }
 
 // Fade function for footer message correct or wrong
