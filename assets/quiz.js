@@ -45,7 +45,7 @@ var questions = [
 // Setting questions array start point
 var questionsStart = 0;
 // Setting timer starting number
-var timeLeft = 76;
+var timeLeft = 91;
 // Used to create an ordered list
 var ol = document.createElement("ol");
 // Variable to hold amount of correct answers
@@ -65,6 +65,7 @@ startButtonEl.addEventListener("click", function (event) {
       clearInterval(timerInterval);
       counterEl.textContent = "Game over!";
       // gameOver function placeholder
+      quizQuestionEl.textContent = "Game Over!";
     }
   }, 1000);
   // Remove text and elements from start page
@@ -78,22 +79,26 @@ startButtonEl.addEventListener("click", function (event) {
 // Function to write questions and choices to HTML
 function writeQC() {
   clearQC();
+  if (questionsStart < 5) {
+    var currentQuestion = questions[questionsStart].question;
+    var currentChoices = questions[questionsStart].choices;
 
-  var currentQuestion = questions[questionsStart].question;
-  var currentChoices = questions[questionsStart].choices;
+    quizQuestionEl.textContent = currentQuestion;
+    quizQuestionEl.setAttribute("style", "font-size: 25px; text-align: left");
 
-  quizQuestionEl.textContent = currentQuestion;
-  quizQuestionEl.setAttribute("style", "font-size: 25px; text-align: left");
+    quizQuestionEl.appendChild(ol);
 
-  quizQuestionEl.appendChild(ol);
-
-  currentChoices.forEach(function (writeList) {
-    var li = document.createElement("li");
-    ol.appendChild(li);
-    li.textContent = writeList;
-    li.addEventListener("click", checkAnswer);
-    li.addEventListener("click", writeQC);
-  });
+    currentChoices.forEach(function (writeList) {
+      var li = document.createElement("li");
+      ol.appendChild(li);
+      li.textContent = writeList;
+      li.addEventListener("click", checkAnswer);
+      li.addEventListener("click", writeQC);
+    });
+  } else {
+    // gameOver function placeholder
+    quizQuestionEl.textContent = "Game Over!";
+  }
 }
 
 // Function to determine and display if user clicked the right answer or a wrong answer
