@@ -127,7 +127,6 @@ function checkAnswer(event) {
   }
   // Moving to the next question
   questionsStart++;
-  console.log("questionsStart: ", questionsStart);
 }
 
 // Function to clear question and choice area
@@ -150,4 +149,15 @@ function gameOver() {
   document.getElementsByTagName("p")[0].id = "finalScore";
 
   p.textContent = "Your final score is " + counterEl.textContent + ".";
+  // Creating user input text box
+  var input1 = document.createElement("input");
+  input1.setAttribute("type", "text");
+  input1.setAttribute("id", "inputText");
+  p.appendChild(input1);
+  // Creating submit button for the input box and giving it the same class as all other styled buttons
+  var submitBtn = document.createElement("button");
+  submitBtn.setAttribute("type", "submit");
+  submitBtn.setAttribute("class", "button");
+  submitBtn.textContent = "Submit";
+  p.appendChild(submitBtn);
 }
