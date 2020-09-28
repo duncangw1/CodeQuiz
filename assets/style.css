@@ -23,9 +23,9 @@ a:link {
 a:hover {
   color: white;
   background-color: indigo;
-  padding: 5px;
+  padding: 5px 10px 5px 10px;
   border-radius: 10px;
-  opacity: 0.5;
+  cursor: pointer;
 }
 /* Aligning the timer in the header to the right side of the page */
 .timer {
