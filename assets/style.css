@@ -101,7 +101,7 @@ ol {
   border-radius: 10px;
   cursor: pointer;
 }
-
+/* Styling the popups for Correct! and Wrong! answer choices */
 #footerCorrect,
 #footerWrong {
   color: gainsboro;
@@ -110,18 +110,31 @@ ol {
   line-height: 40px;
 }
 
+/* "All Done!" Screen style modifications */
+/* Styling the text displaying the user's final score */
 #finalScore {
-  color: red;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
-
+/* Styling the Enter Initials text to the left of the user input text box */
 #initials {
-  font-size: 5px;
+  font-size: 14px;
+  font-style: italic;
 }
-
+/* Styling the input text box */
 #inputText {
-  color: red;
+  height: 25px;
 }
 
-#hsSubmitBtn {
-  color: red;
+/* Highscores page styling */
+/* List styling */
+.highscoreList {
+  font-size: 16px;
+  background: lavenderblush;
+  padding: 3px;
+}
+/* Changing text and background color for every even numbered item on the list */
+.highscoreList:nth-child(even) {
+  background: gray;
+  color: lavenderblush;
 }
