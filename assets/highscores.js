@@ -12,6 +12,7 @@ retrieve();
 
 // Function to display highscores from local storage
 function displayHS() {
+  // For loop to create a list element with each name and score in local storage
   for (var i = 0; i < highscoreNames.length; i++) {
     var highscores = highscoreNames[i] + " - " + highscoreScores[i];
 
@@ -24,11 +25,14 @@ function displayHS() {
 
 // Function to get data stored in local storage
 function retrieve() {
+  // Obtaining user names
   var storedNames = JSON.parse(localStorage.getItem("name list"));
   highscoreNames = storedNames;
 
+  // Obtaining user scores
   var storedScores = JSON.parse(localStorage.getItem("score list"));
   highscoreScores = storedScores;
+
   // If statement to check for values in the names and scores. If there are no values, the script stops and displayHS function will not run.
   if (!highscoreNames && !highscoreScores) {
     return;
