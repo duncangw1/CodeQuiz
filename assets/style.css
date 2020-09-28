@@ -86,11 +86,11 @@ ol {
 }
 /* Adding hover to start button and multiple choice list buttons */
 .button:hover,
-li:hover {
+.multipleChoices:hover {
   opacity: 0.5;
 }
 /* Styling multiple choice question options */
-li {
+.multipleChoices {
   width: fit-content;
   background-color: indigo;
   color: white;

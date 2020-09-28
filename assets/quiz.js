@@ -105,6 +105,7 @@ function writeQC() {
 
     currentChoices.forEach(function (writeList) {
       var li = document.createElement("li");
+      li.setAttribute("class", "multipleChoices");
       ol.appendChild(li);
       li.textContent = writeList;
       li.addEventListener("click", checkAnswer);

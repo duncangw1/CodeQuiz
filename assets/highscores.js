@@ -15,6 +15,10 @@ function displayHS() {
   for (var i = 0; i < highscoreNames.length; i++) {
     var highscores = highscoreNames[i] + " - " + highscoreScores[i];
     console.log(highscores);
+    var li = document.createElement("li");
+    li.setAttribute("class", "highscoreList");
+    li.textContent = highscores;
+    hsList.appendChild(li);
   }
 }
 
