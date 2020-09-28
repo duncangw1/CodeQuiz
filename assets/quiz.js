@@ -153,6 +153,7 @@ function gameOver() {
   var input1 = document.createElement("input");
   input1.setAttribute("type", "text");
   input1.setAttribute("id", "inputText");
+  input1.required = true;
   p.appendChild(input1);
   // Creating submit button for the input box and giving it the same class as all other styled buttons
   var submitBtn = document.createElement("button");
@@ -160,4 +161,17 @@ function gameOver() {
   submitBtn.setAttribute("class", "button");
   submitBtn.textContent = "Submit";
   p.appendChild(submitBtn);
+  // Adding event listener to the Submit button
+  submitBtn.addEventListener("click", function (event) {
+    // Save user's input (name) to local storage
+    var userName = document.getElementById("inputText").value;
+    var nameHistory = JSON.parse(localStorage.getItem("name list")) || [];
+    nameHistory.push(userName);
+    localStorage.setItem("name list", JSON.stringify(nameHistory));
+    // Save user's score to local storage
+    var userScore = counterEl.textContent;
+    var scoreHistory = JSON.parse(localStorage.getItem("score list")) || [];
+    scoreHistory.push(userScore);
+    localStorage.setItem("score list", JSON.stringify(scoreHistory));
+  });
 }
