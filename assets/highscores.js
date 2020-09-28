@@ -14,7 +14,7 @@ retrieve();
 function displayHS() {
   for (var i = 0; i < highscoreNames.length; i++) {
     var highscores = highscoreNames[i] + " - " + highscoreScores[i];
-    console.log(highscores);
+
     var li = document.createElement("li");
     li.setAttribute("class", "highscoreList");
     li.textContent = highscores;
@@ -33,5 +33,7 @@ function retrieve() {
   displayHS();
 }
 
-console.log(highscoreNames);
-console.log(highscoreScores);
+// Event listener to make the Go Back button take the user to index.html
+goBackBtn.addEventListener("click", function () {
+  window.location.href = "index.html";
+});
