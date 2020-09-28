@@ -163,15 +163,22 @@ function gameOver() {
   p.appendChild(submitBtn);
   // Adding event listener to the Submit button
   submitBtn.addEventListener("click", function (event) {
-    // Save user's input (name) to local storage
-    var userName = document.getElementById("inputText").value;
-    var nameHistory = JSON.parse(localStorage.getItem("name list")) || [];
-    nameHistory.push(userName);
-    localStorage.setItem("name list", JSON.stringify(nameHistory));
-    // Save user's score to local storage
-    var userScore = counterEl.textContent;
-    var scoreHistory = JSON.parse(localStorage.getItem("score list")) || [];
-    scoreHistory.push(userScore);
-    localStorage.setItem("score list", JSON.stringify(scoreHistory));
+    // If statement to make sure the user enters at least one letter for their highscores name
+    if (!document.getElementById("inputText").value) {
+      alert(
+        "You must input at least one character to be listed on the highscores page."
+      );
+    } else {
+      // Save user's input (name) to local storage
+      var userName = document.getElementById("inputText").value;
+      var nameHistory = JSON.parse(localStorage.getItem("name list")) || [];
+      nameHistory.push(userName);
+      localStorage.setItem("name list", JSON.stringify(nameHistory));
+      // Save user's score to local storage
+      var userScore = counterEl.textContent;
+      var scoreHistory = JSON.parse(localStorage.getItem("score list")) || [];
+      scoreHistory.push(userScore);
+      localStorage.setItem("score list", JSON.stringify(scoreHistory));
+    }
   });
 }
