@@ -33,6 +33,13 @@ function retrieve() {
   displayHS();
 }
 
+// Event listener to make the Clear button clear all highscores data from the page and local storage
+clearBtn.addEventListener("click", function () {
+  hsList.textContent = "";
+  localStorage.clear("name list");
+  localStorage.clear("score list");
+});
+
 // Event listener to make the Go Back button take the user to index.html
 goBackBtn.addEventListener("click", function () {
   window.location.href = "index.html";
