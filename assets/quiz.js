@@ -64,6 +64,7 @@ startButtonEl.addEventListener("click", function (event) {
   var timerInterval = setInterval(function () {
     timeLeft--;
     counterEl.textContent = timeLeft;
+
     // Show Game Over when it reaches zero
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
@@ -71,6 +72,7 @@ startButtonEl.addEventListener("click", function (event) {
       // gameOver screen
       gameOver();
     }
+
     // Show Game Over when all questions have been answered
     if (questionsStart >= 5) {
       clearInterval(timerInterval);
@@ -79,10 +81,12 @@ startButtonEl.addEventListener("click", function (event) {
       gameOver();
     }
   }, 1000);
+
   // Remove text and elements from start page
   quizQuestionEl.textContent = "";
   quizChoicesEl.remove();
   startButtonEl.remove();
+
   // Display first question and its choices
   writeQC();
 });
@@ -141,29 +145,34 @@ function clearQC() {
 function fadeout() {
   footerEl.textContent = "";
 }
-// gameOver function placeholder
+// gameOver function
 function gameOver() {
   clearQC();
   quizQuestionEl.textContent = "All Done!";
+
   // Create new <p> element under All Done to show the user's final score
   quizQuestionEl.appendChild(p);
+
   // Creating new ID for the created <p> element to use for styling in the CSS
   document.getElementsByTagName("p")[0].id = "finalScore";
+
   // Displaying the user's final score
   p.textContent = "Your final score is " + counterEl.textContent + ".";
   p.appendChild(lineBreak);
+
   // Creating input box label with user instructions
   var input1Label = document.createElement("label");
   input1Label.setAttribute("id", "initials");
   input1Label.textContent = "Enter initials: ";
   p.appendChild(input1Label);
+
   // Creating user input text box
   var input1 = document.createElement("input");
   input1.setAttribute("type", "text");
   input1.setAttribute("id", "inputText");
   input1.required = true;
   p.appendChild(input1);
-  // p.appendChild(input1Label);
+
   // Creating submit button for the input box and giving it the same class as all other styled buttons
   var submitBtn = document.createElement("button");
   submitBtn.setAttribute("type", "submit");
@@ -171,6 +180,7 @@ function gameOver() {
   submitBtn.setAttribute("id", "hsSubmitBtn");
   submitBtn.textContent = "Submit";
   p.appendChild(submitBtn);
+
   // Adding event listener to the Submit button
   submitBtn.addEventListener("click", function (event) {
     // If statement to make sure the user enters at least one letter for their highscores name
@@ -184,11 +194,13 @@ function gameOver() {
       var nameHistory = JSON.parse(localStorage.getItem("name list")) || [];
       nameHistory.push(userName);
       localStorage.setItem("name list", JSON.stringify(nameHistory));
+
       // Save user's score to local storage
       var userScore = counterEl.textContent;
       var scoreHistory = JSON.parse(localStorage.getItem("score list")) || [];
       scoreHistory.push(userScore);
       localStorage.setItem("score list", JSON.stringify(scoreHistory));
+
       // Move user to the Highscores page
       window.location.href = "highscores.html";
     }
