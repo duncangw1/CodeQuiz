@@ -29,8 +29,12 @@ function retrieve() {
 
   var storedScores = JSON.parse(localStorage.getItem("score list"));
   highscoreScores = storedScores;
-
-  displayHS();
+  // If statement to check for values in the names and scores. If there are no values, the script stops and displayHS function will not run.
+  if (!highscoreNames && !highscoreScores) {
+    return;
+  } else {
+    displayHS();
+  }
 }
 
 // Event listener to make the Clear button clear all highscores data from the page and local storage
