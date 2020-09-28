@@ -50,6 +50,8 @@ var timeLeft = 91;
 var ol = document.createElement("ol");
 // Used to create a paragraph
 var p = document.createElement("p");
+// Used to create line break
+var lineBreak = document.createElement("br");
 // Variable to hold amount of correct answers
 var correctAnswers = 0;
 // Adding sound for correct and wrong answers
@@ -147,18 +149,26 @@ function gameOver() {
   quizQuestionEl.appendChild(p);
   // Creating new ID for the created <p> element to use for styling in the CSS
   document.getElementsByTagName("p")[0].id = "finalScore";
-
+  // Displaying the user's final score
   p.textContent = "Your final score is " + counterEl.textContent + ".";
+  p.appendChild(lineBreak);
+  // Creating input box label with user instructions
+  var input1Label = document.createElement("label");
+  input1Label.setAttribute("id", "initials");
+  input1Label.textContent = "Enter initials: ";
+  p.appendChild(input1Label);
   // Creating user input text box
   var input1 = document.createElement("input");
   input1.setAttribute("type", "text");
   input1.setAttribute("id", "inputText");
   input1.required = true;
   p.appendChild(input1);
+  // p.appendChild(input1Label);
   // Creating submit button for the input box and giving it the same class as all other styled buttons
   var submitBtn = document.createElement("button");
   submitBtn.setAttribute("type", "submit");
   submitBtn.setAttribute("class", "button");
+  submitBtn.setAttribute("id", "hsSubmitBtn");
   submitBtn.textContent = "Submit";
   p.appendChild(submitBtn);
   // Adding event listener to the Submit button
