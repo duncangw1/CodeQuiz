@@ -189,6 +189,8 @@ function gameOver() {
       var scoreHistory = JSON.parse(localStorage.getItem("score list")) || [];
       scoreHistory.push(userScore);
       localStorage.setItem("score list", JSON.stringify(scoreHistory));
+      // Move user to the Highscores page
+      window.location.href = "highscores.html";
     }
   });
 }
