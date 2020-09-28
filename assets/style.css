@@ -101,3 +101,7 @@ li {
   border-radius: 10px;
   cursor: pointer;
 }
+
+#finalScore {
+  color: red;
+}

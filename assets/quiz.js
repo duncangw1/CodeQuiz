@@ -48,6 +48,8 @@ var questionsStart = 0;
 var timeLeft = 91;
 // Used to create an ordered list
 var ol = document.createElement("ol");
+// Used to create a paragraph
+var p = document.createElement("p");
 // Variable to hold amount of correct answers
 var correctAnswers = 0;
 // Adding sound for correct and wrong answers
@@ -63,9 +65,16 @@ startButtonEl.addEventListener("click", function (event) {
     // Show Game Over when it reaches zero
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
-      counterEl.textContent = "Game over!";
-      // gameOver function placeholder
-      quizQuestionEl.textContent = "Game Over!";
+      counterEl.textContent = timeLeft;
+      // gameOver screen
+      gameOver();
+    }
+    // Show Game Over when all questions have been answered
+    if (questionsStart >= 5) {
+      clearInterval(timerInterval);
+      counterEl.textContent = timeLeft;
+      // gameOver screen
+      gameOver();
     }
   }, 1000);
   // Remove text and elements from start page
@@ -96,8 +105,8 @@ function writeQC() {
       li.addEventListener("click", writeQC);
     });
   } else {
-    // gameOver function placeholder
-    quizQuestionEl.textContent = "Game Over!";
+    // gameOver screen
+    gameOver();
   }
 }
 
@@ -132,3 +141,13 @@ function fadeout() {
   footerEl.textContent = "";
 }
 // gameOver function placeholder
+function gameOver() {
+  clearQC();
+  quizQuestionEl.textContent = "All Done!";
+  // Create new <p> element under All Done to show the user's final score
+  quizQuestionEl.appendChild(p);
+  // Creating new ID for the created <p> element to use for styling in the CSS
+  document.getElementsByTagName("p")[0].id = "finalScore";
+
+  p.textContent = "Your final score is " + counterEl.textContent + ".";
+}
