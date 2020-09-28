@@ -124,11 +124,15 @@ function checkAnswer(event) {
   if (usersPick.textContent === questions[questionsStart].answer) {
     correctAnswers++;
     correctSound.play();
+    footerEl.setAttribute("id", "footerCorrect");
+    footerEl.setAttribute("style", "border-top: 3px solid gainsboro");
     footerEl.textContent = "Correct!";
     setTimeout(fadeout, 1000);
   } else {
     timeLeft = timeLeft - 10;
     wrongSound.play();
+    footerEl.setAttribute("id", "footerWrong");
+    footerEl.setAttribute("style", "border-top: 3px solid gainsboro");
     footerEl.textContent = "Wrong!";
     setTimeout(fadeout, 1000);
   }
@@ -145,6 +149,7 @@ function clearQC() {
 // Fade function for footer message correct or wrong
 function fadeout() {
   footerEl.textContent = "";
+  footerEl.style.border = "none";
 }
 // gameOver function
 function gameOver() {

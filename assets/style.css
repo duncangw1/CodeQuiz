@@ -102,6 +102,14 @@ ol {
   cursor: pointer;
 }
 
+#footerCorrect,
+#footerWrong {
+  color: gainsboro;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 40px;
+}
+
 #finalScore {
   color: red;
 }
