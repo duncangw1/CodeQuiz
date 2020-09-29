@@ -138,3 +138,16 @@ ol {
   background: gray;
   color: lavenderblush;
 }
+
+/* Media Queries to allow page responsiveness */
+@media screen and (max-width: 880px) {
+  .container {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 682px) {
+  .container {
+    width: 90%;
+  }
+}
