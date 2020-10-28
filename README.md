@@ -6,6 +6,10 @@ This README has been generated to accompany the completed Code Quiz. The purpose
 
 [Code Quiz](https://duncangw1.github.io/CodeQuiz/)
 
+## Technologies Used
+
+- HTML, CSS, JavaScript
+
 ## Screenshots
 
 Landing Page
